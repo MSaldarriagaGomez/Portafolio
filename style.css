@@ -1,0 +1,109 @@
+
+/******* General ********/
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #f8f9fa;
+}
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 1rem;
+    font-weight: 500;
+}
+.mar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: #e9ecef;
+}
+.mar-content {
+    max-width: 50%;
+}
+.mar-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+.section-header {
+    text-align: center;
+    margin: 2rem 0;
+}
+.service, .experience, .portfolio {
+    padding: 2rem;
+    background: #f8f9fa;
+    margin-bottom: 2rem;
+}
+.service-item, .timeline-item, .team-item {
+    margin-bottom: 1.5rem;
+}
+.team-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/******* Section Header ********/
+
+.section-header {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.section-header p {
+    display: inline-block;
+    margin: 0 30px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #ffffff;
+}
+
+.section-header p::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    top: 11px;
+    right: 0;
+    left: -30px;
+    background: #F28F3B;
+    z-index: -1;
+}
+
+.section-header p::after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 3px;
+    top: 11px;
+    left: 3px;
+    background: #F28F3B;
+    z-index: 1;
+}
+
+.section-header h2 {
+    margin: 0;
+    position: relative;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+@media (max-width: 767.98px) {
+    .section-header h2 {
+        font-size: 30px;
+    }
+}
