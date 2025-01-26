@@ -602,11 +602,20 @@ body {
 .service .service-text p {
     margin: 0;
     font-size: 16px;
-    transition: 1s;
+    transition: 0.3s;
+    
+}
+
+.transparent-bg {
+    background-color: transparent !important; 
+    border-bottom: 2px solid #FFD5C2; /* Línea inferior */
+    padding: 5px 0; /* Espaciado vertical */
+    text-align: center; /* Alinea el texto horizontalmente */
+    color: #F28F3B;
 }
 
 .service .service-item:hover .service-text h3,
-.service .service-item:hover .service-text p {
+.service .service-item:hover{
     color: #ffffff;
 }
 
