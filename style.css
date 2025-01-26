@@ -133,35 +133,10 @@ a:focus {
     color: #588B8B;
 }
 
-.mar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    background: #e9ecef;
-}
-.mar-content {
-    max-width: 50%;
-}
-.mar-image img {
-    max-width: 50%;
-    border-radius: 10px;
-}
+
 .section-header {
     text-align: center;
     margin: 2rem 0;
-}
-.service, .experience, .portfolio {
-    padding: 2rem;
-    background: #f8f9fa;
-    margin-bottom: 2rem;
-}
-.service-item, .timeline-item, .team-item {
-    margin-bottom: 1.5rem;
-}
-.team-img img {
-    width: 40%;
-    border-radius: 10px;
 }
 
 
@@ -265,7 +240,6 @@ html {
 }
 
 
-
 /******* Section Header ********/
 
 .section-header {
@@ -278,24 +252,13 @@ html {
     margin: 0 30px;
     margin-bottom: 10px;
     padding-left: 15px;
-    position: central;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    background: #ffffff;
+    position: relative; 
 }
 
-.section-header p::before {
-    position: absolute;
-    content: "";
-    height: 3px;
-    top: 11px;
-    right: 0;
-    left: -30px;
-    background: #F28F3B;
-    z-index: -1;
-}
 
 .section-header p::after {
     position: absolute;
@@ -315,21 +278,46 @@ html {
     font-weight: 700;
 }
 
+@media (max-width: 991.98px) {
+    .section-header h2 {
+        font-size: 35px; 
+    }
+}
+
 @media (max-width: 767.98px) {
     .section-header h2 {
-        font-size: 30px;
+        font-size: 30px; 
+    }
+}
+
+@media (max-width: 575.98px) {
+    .section-header h2 {
+        font-size: 25px; 
+    }
+
+    .section-header p {
+        font-size: 14px;
+        margin: 0 15px;
     }
 }
 
 
-
-
 /********** Mariana***********/
+
+.mar-content,
+.mar-image img {
+    max-width: 100%; /* Asegúrate de que se ajusten correctamente */
+    width: 100%; /* También asegúrate de que ocupe el 100% del contenedor */
+}
+
 .mar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
     position: relative;
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
+    width: 100%;
     margin-bottom: 2px;
-    padding: 20px;
     overflow: hidden;
     background: linear-gradient(rgba(255, 213, 194), rgba(242, 143, 59));
     background-position: center;
@@ -337,11 +325,10 @@ html {
     background-size: cover;
 }
 
-
 .mar .row {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Esto separa el texto a la izquierda y la imagen a la derecha */
+    justify-content: space-between;
 }
 
 .mar .mar-content {
@@ -351,12 +338,7 @@ html {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-}
-
-
-
-body {
-    overflow-x: hidden; /* Evita el desbordamiento horizontal en toda la página */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
 }
 
 .mar .mar-text p {
@@ -364,7 +346,7 @@ body {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 15px;
-    line-height: 1.2;    /* Ajusta la altura de la línea */
+    line-height: 1.2;
 }
 
 .mar .mar-text h1 {
@@ -373,7 +355,7 @@ body {
     font-weight: 700;
     letter-spacing: 3px;
     margin-bottom: 15px;
-    line-height: 1.2; 
+    line-height: 1.2;
 }
 
 .mar .mar-text h2 {
@@ -383,29 +365,29 @@ body {
     color: #ffffff;
     font-size: 35px;
     font-weight: 600;
-     line-height: 1.2;
+    line-height: 1.2;
 }
 
-
 .mar .mar-image {
-    position: relative; 
+    position: relative;
     text-align: right;
-    margin-top: 70px; 
+    margin-top: 70px;
     margin-left: 15%;
-    
 }
 
 .mar .mar-image img {
     max-width: 80%;
-    max-height: 80%; 
+    max-height: 80%;
 }
-
 
 .mar .mar-btn .btn {
     margin-top: 35px;
     color: #588B8B;
     background: #ffffff;
     box-shadow: inset 0 0 0 100px #ffffff;
+    padding: 10px 25px; /* Ajustamos el tamaño del botón */
+    font-size: 18px; /* Aseguramos que el botón no sea demasiado pequeño */
+    border-radius: 5px;
 }
 
 .mar .mar-btn .btn:hover {
@@ -419,127 +401,168 @@ body {
     margin-right: 50px;
 }
 
-/* Define el contenedor del texto con animación */
 .typed-text {
-    font-size: 25px; /* Tamaño del texto */
-    font-weight: 600; /* Peso de la fuente */
-    color: #ffffff; /* Color del texto */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-    overflow: hidden; /* Oculta cualquier parte del texto que no quepa */
-    border-right: 3px solid #fff; /* Simula el cursor */
-    width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    width: 100%;
     animation: typing 13s steps(30) infinite, blink 0.90s step-end infinite;
 }
 
-/* Animación de escritura */
 @keyframes typing {
     0% {
-        width: 0; /* Empieza sin texto */
+        width: 0;
     }
     50% {
-        width: 100%; /* Escribe todo el texto */
+        width: 100%;
     }
     100% {
-        width: 0; /* Borra el texto para repetir */
+        width: 0;
     }
 }
 
-/* Animación del parpadeo del cursor */
 @keyframes blink {
     50% {
         border-color: transparent;
     }
 }
 
-
-@media (max-width: 991.98px) {
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
     .mar {
-        padding-top: 60px;
+        flex-direction: column;
+        padding: 1rem;
     }
-    
+
+    .mar .row {
+        flex-direction: column;
+    }
+
     .mar .mar-content {
-        padding: 0 15px;
+        padding-left: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
-    
+
+    .mar .mar-image {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .mar .mar-image img {
+        max-width: 100%;
+    }
+
+    .mar .mar-text h1 {
+        font-size: 35px;
+    }
+
+    .mar .mar-text h2 {
+        font-size: 28px;
+    }
+
     .mar .mar-text p {
         font-size: 20px;
-        margin-bottom: 0px; /* Elimina el margen inferior en pantallas pequeñas */
-        line-height: 1.2;  /* Controla la altura de la línea */
-    }
-    
-    .mar .mar-text h1 {
-        font-size: 45px;
-        margin-bottom: 0px; /* Elimina el margen inferior en pantallas pequeñas */
-        line-height: 1.1;  /* Controla la altura de la línea */
-    }
-    
-    .mar .mar-text h2 {
-        font-size: 22px;
-        height: 22px;
     }
 
     .mar .mar-btn .btn {
-        padding: 12px 30px;
-        letter-spacing: 1px;
+        padding: 12px 30px; /* Ajusta el tamaño del botón */
+        font-size: 16px;
     }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
     .mar {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        flex-direction: column;
+        padding: 1.5rem;
     }
-    
-    .mar,
-    .mar .mar-text,
-    .mar .mar-btn {
+
+    .mar .row {
+        flex-direction: column;
+    }
+
+    .mar .mar-content {
+        padding-left: 0;
+        align-items: center;
+        justify-content: center;
         width: 100%;
+    }
+
+    .mar .mar-image {
+        margin-left: 0;
         text-align: center;
+        margin-top: 40px;
     }
-    
-    .mar .mar-text p {
-        font-size: 18px;
-        margin-bottom: 0px; /* Elimina el margen inferior en pantallas más pequeñas */
-        line-height: 1.2;  /* Controla la altura de la línea */
+
+    .mar .mar-image img {
+        max-width: 90%;
     }
-    
+
     .mar .mar-text h1 {
-        font-size: 35px;
-        margin-bottom: 0px; /* Elimina el margen inferior */
-        line-height: 1.1;  /* Controla la altura de la línea */
+        font-size: 45px;
     }
 
     .mar .mar-text h2 {
-        font-size: 18px;
-        height: 18px;
+        font-size: 30px;
     }
-        
+
+    .mar .mar-text p {
+        font-size: 22px;
+    }
+
     .mar .mar-btn .btn {
-        padding: 10px 15px;
-        letter-spacing: 1px;
+        padding: 15px 35px; /* Ajusta el tamaño del botón */
+        font-size: 18px;
     }
 }
 
 @media (max-width: 575.98px) {
-    .mar .mar-text p {
-        font-size: 16px;
-        margin-bottom: 0px; /* Elimina el margen inferior */
-        line-height: 1.2;  /* Controla la altura de la línea */
+    .mar {
+        flex-direction: column;
+        padding: 1rem;
     }
-    
+
+    .mar .row {
+        flex-direction: column;
+    }
+
+    .mar .mar-content {
+        padding-left: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .mar .mar-image {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .mar .mar-image img {
+        max-width: 100%;
+    }
+
     .mar .mar-text h1 {
         font-size: 30px;
-        margin-bottom: 0px; /* Elimina el margen inferior */
-        line-height: 1.1;  /* Controla la altura de la línea */
     }
+
     .mar .mar-text h2 {
-        font-size: 18px;
-        height: 18px;
+        font-size: 25px;
     }
-    
+
+    .mar .mar-text p {
+        font-size: 18px;
+    }
+
     .mar .mar-btn .btn {
-        padding: 8px 10px;
-        letter-spacing: 0;
+        padding: 10px 25px; /* Ajusta el tamaño del botón */
+        font-size: 14px;
     }
 }
 
@@ -706,6 +729,7 @@ body {
     justify-content: flex-start;
     box-shadow: inset 0 0 0 0 transparent;
     transition: ease-out 0.5s;
+    min-height: 400px; 
 }
 
 .team .team-img {
@@ -718,6 +742,7 @@ body {
     position: relative;
     width: 100%;
     transition: .5s;
+    
 }
 
 .team .team-text {
@@ -732,6 +757,8 @@ body {
     font-weight: 600;
     margin-bottom: 5px;
     transition: 1s;
+    margin-bottom: 1px;
+    margin-top: 10px;
 }
 
 .team .team-text h4 {
@@ -739,6 +766,8 @@ body {
     font-weight: 600;
     margin-bottom: 15px;
     transition: 1s;
+    margin-top: 5px; /* Reduce el espacio encima del h4 */
+    margin-bottom: 15px; 
 }
 
 .team .team-text p {
@@ -751,6 +780,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 10px; /* Mantener el espacio encima de los botones */
+    margin-bottom: 10px; /* Aumenta el espacio debajo de los botones */
 }
 
 .team .team-social a.btn {
