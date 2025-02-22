@@ -143,99 +143,98 @@ a:focus {
 /*********** Nav Bar **********/
 
 .navbar {
-    position: fixed; /* Lo hace fijo */
+    position: fixed; /* Navbar fijo */
     top: 0;
-    left: 0; 
-    width: 100%; 
-    z-index: 1000; 
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 10rem 6rem; 
-   
+    justify-content: center; /* Centra los elementos */
+    align-items: center;
+    padding: 2rem 4rem; /* Ajuste del padding */
+    background: transparent; /* Mantiene el fondo transparente */
+    transition: background 0.3s ease, padding 0.3s ease; /* Transición suave */
 }
 
+/* Navbar con scroll */
+.navbar.scrolled {
+    background: rgba(255, 213, 194); /* Fondo más visible */
+    padding: 1rem 4rem; /* Reduce el padding */
+}
+
+/* Contenedor de enlaces */
 .navbar-links {
     display: flex;
     gap: 2rem;
 }
 
+/* Estilos de los enlaces */
 .navbar a {
-    text-decoration: none; /* Quita el subrayado */
-    color: #ffffff; /* Color predeterminado de los textos */
+    text-decoration: none;
+    color: #ffffff; /* Mantiene el color blanco del texto */
     font-weight: 500;
-    transition: color 0.3s ease; /* Suaviza la transición de color */
+    transition: color 0.3s ease;
 }
 
-/* Cambio de color al pasar el mouse */
+/* Hover normal (cuando NO hay scroll) */
 .navbar a:hover {
-    color: #588B8B; 
+    color: #ff8c42; /* Color naranja */
 }
 
-html {
-    scroll-behavior: smooth;
+/* Enlaces al hacer scroll */
+.navbar.scrolled a {
+    color: #ffffff;
 }
 
-@media (min-width: 992px) {
-    .navbar {
-        position: fixed;
+/* Hover cuando el navbar está scrolleado */
+.navbar.scrolled a:hover {
+    color: #588B8B; /* Cambia a #588B8B cuando hay scroll */
+}
+
+/* Menú hamburguesa (invisible en pantallas grandes) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Líneas del menú hamburguesa */
+.menu-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Navbar responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        padding: 20px 50px; /* Tamaño más pequeño */
-        background: transparent !important;
-        border-bottom: 1px dashed rgba(256, 256, 256, 0.2);
-        z-index: 9;
-        transition: all 0.3s ease; /* Suaviza los cambios */
-    }
-
-    .navbar a {
-        color: white; /* Color inicial de los enlaces */
-        text-decoration: none; /* Quita el subrayado */
-        font-weight: 500; /* Opcional: peso del texto */
-        transition: color 0.3s ease; /* Suaviza el cambio de color */
-    }
-
-    .navbar a:hover {
-        color: #ff9800; /* Cambia a un color de tu elección al pasar el mouse */
-    }
-
-    /* Cambios al hacer scroll */
-    .navbar.scrolled {
-        background: #f8f9fa !important; /* Cambia a un color sólido */
-        border-bottom: none;
-        padding: 15px 30px; /* Navbar más pequeño después del scroll */
-    }
-
-    .navbar.scrolled a {
-        color: #ff9800; /* Cambia el color de las letras */
-    }
-
-    .navbar.scrolled a:hover {
-        color: #588B8B; /* Otro color al pasar el mouse en el estado scrolled */
-    }
-}
-
-
-
-@media (max-width: 991.98px) {   
-    .navbar {
-        padding: 15px;
-        background: #ffffff !important;
+        background: rgba(255, 140, 66, 0.9);
+        text-align: center;
+        padding: 1.5rem 0;
     }
     
-    .navbar .navbar-brand {
-        color: #588B8B;
+    .navbar-links a:hover {
+        color: #588B8B; /* Cambia al color que prefieras */
     }
-    
-    .navbar .navbar-nav {
-        margin-top: 15px;
-    }
-    
-    .navbar a.nav-link {
-        padding: 5px;
-    }
-    
-    .navbar .dropdown-menu {
-        box-shadow: none;
+
+    .navbar-links.active {
+        display: flex;
     }
 }
 
@@ -407,23 +406,25 @@ html {
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid #fff;
-    width: 100%;
+    border-right: 1px solid #fff; /* Cursor */
+    max-width: 30ch;
     animation: typing 13s steps(30) infinite, blink 0.90s step-end infinite;
 }
 
+/* Animación de escritura */
 @keyframes typing {
     0% {
-        width: 0;
+        width: 0ch;
     }
     50% {
-        width: 100%;
+        width: 30ch; /* Ajusta este valor según el texto */
     }
     100% {
-        width: 0;
+        width: 0ch;
     }
 }
 
+/* Parpadeo del cursor */
 @keyframes blink {
     50% {
         border-color: transparent;
@@ -446,6 +447,7 @@ html {
         align-items: center;
         justify-content: center;
         width: 100%;
+        margin-top: 10vh; /* cambio */
     }
 
     .mar .mar-image {
@@ -460,14 +462,17 @@ html {
 
     .mar .mar-text h1 {
         font-size: 35px;
+        margin-top: 10vh; /* cambio */
     }
 
     .mar .mar-text h2 {
         font-size: 28px;
+        /*margin-top: 10vh; /* cambio */
     }
 
     .mar .mar-text p {
         font-size: 20px;
+        margin-top: 10vh; /* cambio */
     }
 
     .mar .mar-btn .btn {
@@ -491,6 +496,7 @@ html {
         align-items: center;
         justify-content: center;
         width: 100%;
+        margin-top: 10vh; /* cambio */
     }
 
     .mar .mar-image {
@@ -505,6 +511,7 @@ html {
 
     .mar .mar-text h1 {
         font-size: 45px;
+        margin-top: 10vh; /* cambio */
     }
 
     .mar .mar-text h2 {
@@ -550,6 +557,7 @@ html {
 
     .mar .mar-text h1 {
         font-size: 30px;
+        margin-top: 10vh; /* cambio */
     }
 
     .mar .mar-text h2 {
